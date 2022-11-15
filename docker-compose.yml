@@ -1,0 +1,19 @@
+services: 
+  api:
+    restart: always
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes: 
+      - ./backend:/api
+      - '/api/node_modules'
+    depends_on: 
+      - mysql_server
+  web:
+    build:
+      dockerfile: frontend/Dockerfile
+      context: ./
+    ports:
+      - '3000:3000'
+    depends_on:
+      - app

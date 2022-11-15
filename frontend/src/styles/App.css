@@ -1,0 +1,62 @@
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background: url('../assets/bg.png');
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.formContainer {
+  padding: 0.1%;
+  align-items: center;
+  justify-content: stretch;
+  background-color: rgb(254, 254, 254 , 0.5);
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+@media all and (orientation: landscape), all and (min-width: 450px) {
+  .formContainer {
+    transform: skewX(-45deg);
+  }
+  .formContainer > #phoneInput, #submitText {
+    transform: skewX(45deg);
+  }
+}
+
+#phoneSubmit {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  align-self: stretch;
+  justify-self: stretch;
+  width: 40%;
+  padding: 20px;
+}
+
+#phoneInput {
+  background-color: transparent;
+  width: 55%;
+  padding: 20px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+#submitText {
+  display: block;
+  opacity: 1;
+}
+
+#alert {
+  position:absolute;
+  bottom: 90%;
+}
