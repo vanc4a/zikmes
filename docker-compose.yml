@@ -7,13 +7,22 @@ services:
     volumes: 
       - ./backend:/api
       - '/api/node_modules'
-    depends_on: 
-      - mysql_server
-  web:
+  client:
     build:
-      dockerfile: frontend/Dockerfile
-      context: ./
-    ports:
-      - '3000:3000'
+      dockerfile: Dockerfile
+      context: ./frontend
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    depends_on: 
+      - api
+  nginx:
     depends_on:
-      - app
+      - api
+      - client
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - "3000:1000"

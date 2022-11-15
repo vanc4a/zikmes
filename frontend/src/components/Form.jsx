@@ -1,5 +1,4 @@
 import '../styles/App.css'
-import { useState } from 'react';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -29,7 +28,7 @@ const Form = ({setAlert, phone, setPhone}) => {
     title={'ЗАКАЗАТЬ'} 
     type={'submit'} 
     id={'phoneSubmit'} 
-    onClick={() => phone.length ? sendPhone() : setAlert({saverity: 'warning', title: 'Поле не может быть пустым.'})}>
+    onClick={() => phone.length ? sendPhone() : setAlert({saverity: 'warning', title: 'Поле не может быть пустым'})}>
       <a id={'submitText'}>
         ЗАКАЗАТЬ <FontAwesomeIcon icon={faArrowRight} />
       </a>
